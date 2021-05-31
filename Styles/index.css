@@ -1,0 +1,137 @@
+body, html{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: lightgrey;
+    color: black;
+    font-family: 'Trebuchet MS';
+    text-align: center;
+    box-sizing: border-box;
+}
+header{
+    grid-area: h;
+    background-color: lightseagreen;
+    color: whitesmoke;
+    padding: 10px;
+}
+main{
+    grid-area: m;
+}
+nav{
+    grid-area: n;
+}
+section{
+    grid-area: s;
+}
+aside{
+    grid-area: a;
+}
+footer{
+    grid-area: f;
+    background-color: lightseagreen;
+    color: whitesmoke;
+    padding: 5px;
+}
+.menu{
+    background-color: grey;
+    margin: 0;
+    padding: 10px;
+    overflow: none;
+}
+.menu a{
+    text-align: center;
+    display: block;
+    margin: 0;
+    padding: 10px 12px;
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+.menu a:hover{
+    background-color: lightslategray;
+}
+.menu a.active{
+    background-color: lightseagreen;
+    color: whitesmoke;
+}
+.article{
+    padding: 0% 5%;
+}
+video{
+    width: 100%;
+    height: 270px;
+}
+.container{
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-auto-rows: auto;
+    grid-template-areas: 
+                "h h h h h h h h"
+                "n n n n n n n n"
+                "m m m m m m m m"
+                "m m m m m m m m"
+                "s s s s s s s s"
+                "a a a a a a a a"
+                "f f f f f f f f";
+}
+@media screen and (min-width: 800px){
+    .container{
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-auto-rows: auto;
+        grid-template-areas: 
+                    "h h h h h h h h"
+                    "n n n n n n n n"
+                    "m m m m m m m m"
+                    "m m m m m m m m"
+                    "a s s s s s s s"
+                    "a s s s s s s s"
+                    "f f f f f f f f";
+    }
+    .menu a{
+        display: inline;
+    }
+    .article{
+        padding: 0% 10%;
+        text-align: left;
+    }
+    video{
+        width: 480px;
+        height: 270px;
+    }
+}
+@media screen and (min-width: 1020px){
+    .container{
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-auto-rows: auto;
+        grid-template-areas: 
+                    "h h h h h h h h"
+                    "n n n n n n n n"
+                    "m m m m m m m m"
+                    "m m m m m m m m"
+                    "s s s s s s s a"
+                    "s s s s s s s a"
+                    "f f f f f f f f";
+    }
+    .menu a{
+        display: inline;
+    }
+    .article{
+        padding: 0% 20%;
+        text-align: left;
+    }
+    video{
+        width: 480px;
+        height: 270px;
+    }
+}
