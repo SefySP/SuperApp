@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Styles\index.css">
+    <link rel="stylesheet" href="Styles\form.css">
     <title>SuperApp</title>
 </head>
 
@@ -26,7 +27,31 @@
             </div>
         </nav>
         <main>
-            signup
+            <form action="login.html" id="form_signup" method="post">
+                <h2>
+                    Sign Up
+                </h2>
+                <input type="text" name="User_fname" id="user_fname_id" class="text_field" placeholder="First Name" required>
+                <input type="text" name="User_lname" id="user_lname_id" class="text_field" placeholder="Last Name" required>
+                <input type="email" name="User_email" id="user_email_id" class="text_field" placeholder="example@address.region" required>
+                <input type="text" name="username" id="username_id" placeholder="Username" class="text_field" required>
+                <input type="password" name="password" id="password_id" placeholder="Password" class="text_field" required>
+                <input type="password" name="repeat_password" id="repeat_password_id" placeholder="Repeat Password" class="text_field" required>
+                <select name="User_gender" id="user_gender_id" class="text_field" required>
+                    <option value="male" selected>
+                        Male
+                    </option>
+                    <option value="female">
+                        Female
+                    </option>
+                    <option value="other">
+                        Other
+                    </option>
+                </select>
+                <input type="date" name="User_date" id="user_date_id" class="text_field" required>
+                <input type="file" name="User_photo" id="user_photo_id" class="text_field" required>
+                <input type="submit" value="Login" id="submit_btn">
+            </form>
         </main>
         <footer>
             <label>Peterhatz, Dannis, Sefy 2021, All rights reserved</label>
