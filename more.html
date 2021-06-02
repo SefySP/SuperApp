@@ -30,25 +30,64 @@
                 More
             </h2>
             <div>
-                Περισσότερες πληροφορίες για την C παρουσιασμένες σε μορφή αρχείου pdf:
-                <a href="Media\more.pdf#toolbar=0" target="_blank">PDF</a>
-            </div>
-            <div>
-                Γιατί η C έχει μεγάλη επιρροή:
-                <a href="https://www.youtube.com/watch?v=ci1PJexnfNE" target="_blank">YouTube</a>
-            </div>
-            <div>
-                Σελίδα της Wikipedia για την C:
-                <a href="https://en.wikipedia.org/wiki/C_(programming_language)" target="_blank">Wikipedia</a>
-            </div>
-            <div>
                 <video muted controls>
                     <source src="Media\video.mp4" type="video/mp4">
                 </video>
             </div>
         </main>
+        <section>
+            <article class="article">
+                <p>&nbsp;&nbsp;&nbsp;&nbsp; Παραθέτουμε έναν τυπικό κώδικα ταξινόμησης(Τρόπος Bubblesort)
+                    <pre class="aside_links_list">
+#include <stdio.h>
+int main()
+{
+    int array[100], n, c, d, swap;
+    printf("Enter number of elements\n");
+    scanf("%d", &n);
+    printf("Enter %d integers\n", n);
+    for (c = 0; c < n; c++) 
+        scanf("%d", &array[c]); 
+    for (c=0 ; c < n - 1; c++) 
+    { 
+        for (d=0 ; d < n - c - 1; d++) 
+        { 
+            if (array[d]> array[d+1]) /* For decreasing order use '<' instead of '>' */ 
+            { 
+                swap=array[d]; 
+                array[d]=array[d+1];
+                array[d+1]=swap; 
+            } 
+        } 
+    }
+    printf("Sorted list in ascending order:\n"); for (c=0; c < n; c++) printf("%d\n",array[c]); 
+    return 0; 
+}
+                    </pre>
+                </p>
+            </article>
+        </section>
+        <aside class="aside_links_list">
+            <ul>
+                <li>
+                    Περισσότερες πληροφορίες για την C:
+                    <a href="Media\more.pdf#toolbar=0" target="_blank">PDF</a>
+                </li>
+                <li>
+                    Γιατί η C έχει μεγάλη επιρροή:
+                    <a href="https://www.youtube.com/watch?v=ci1PJexnfNE" target="_blank">YouTube</a>
+                </li>
+                <li>
+                    Σελίδα της Wikipedia για την C:
+                    <a href="https://en.wikipedia.org/wiki/C_(programming_language)" target="_blank">Wikipedia</a>
+                </li>
+            </ul>
+        </aside>
         <footer>
-            <label>Peterhatz, Dannis, Sefy 2021, All rights reserved</label>
+            <p>Apostolopoylos Spyridon // A.M. : 2022201800016</p>
+            <p>Karalis Spyridon // A.M. : 2022201800070</p>
+            <p>Chatzivasileiou Panagiotis // A.M. : 2022201800219</p>
+            <p>&copy;2021 All rights reserved</p>
         </footer>
     </div>
 </body>
