@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Styles\index.css">
+    <link rel="stylesheet" href="Styles\form.css">
+    <script src="Scripts\quiz.js"></script>
     <title>SuperApp</title>
 </head>
 
@@ -29,6 +31,26 @@
             <h2>
                 Quiz
             </h2>
+            <form id="quiz_form" name="quiz_form">
+                <div>
+                    1. Η C αναπτύχθηκε αρχικά, μεταξύ του
+                    <select name="Option1">
+                        <option value="OPT1" selected="selected">1967</option>
+                        <option value="OPT2">1969</option>
+                        <option value="OPT3">1972</option>
+                    </select>
+                    και του
+                    <select name="Option2">
+                        <option value="OPT1" selected="selected">1973</option>
+                        <option value="OPT2">1974</option>
+                        <option value="OPT3">1977</option>
+                    </select>
+                    , από τον Ντένις Ρίτσι στα εργαστήρια AT&T Bell Labs.
+                    
+                </div>
+                <br>
+                <input type="submit" value="Submit" id="submit_btn" onclick="showResults()">
+            </form>
         </main>
         <footer>
             <p>Apostolopoylos Spyridon // A.M. : 2022201800016</p>
