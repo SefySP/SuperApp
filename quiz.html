@@ -32,22 +32,83 @@
                 Quiz
             </h2>
             <form id="quiz_form" name="quiz_form">
-                <div>
-                    1. Η C αναπτύχθηκε αρχικά, μεταξύ του
-                    <select name="Option1">
-                        <option value="OPT1" selected="selected">1967</option>
-                        <option value="OPT2">1969</option>
-                        <option value="OPT3">1972</option>
-                    </select>
-                    και του
-                    <select name="Option2">
-                        <option value="OPT1" selected="selected">1973</option>
-                        <option value="OPT2">1974</option>
-                        <option value="OPT3">1977</option>
-                    </select>
-                    , από τον Ντένις Ρίτσι στα εργαστήρια AT&T Bell Labs.
-                    
-                </div>
+                <ol>
+                    <li>
+                        Η C αναπτύχθηκε αρχικά, μεταξύ του
+                        <select name="Option1">
+                            <option value="OPT1" selected="selected">1967</option>
+                            <option value="OPT2">1969</option>
+                            <option value="OPT3">1972</option>
+                        </select>
+                        και του
+                        <select name="Option2">
+                            <option value="OPT1" selected="selected">1973</option>
+                            <option value="OPT2">1974</option>
+                            <option value="OPT3">1977</option>
+                        </select>
+                        , από τον Ντένις Ρίτσι στα εργαστήρια AT&T Bell Labs.
+                    </li>
+                    <br>
+                    <li>
+                        Η γλώσσα ονομάστηκε "C" λόγω του ότι πολλά από τα χαρακτηριστικά της
+                        προήλθαν από μια παλαιότερη γλώσσα, η οποία ονομαζόταν "B". :
+                        <div class="display_down">
+                            <ul class="no_decor">
+                                <li>
+                                    <input type="radio" name="TF" value="True">True
+                                </li>
+                                <li>   
+                                    <input type="radio" name="TF" value="False">False
+                                </li>
+                            </ul>
+                        </div>        
+                    </li>
+                    <br>
+                    <li>
+                        Επέλεξε τον λάθος διατυπωμένο τελεστή :
+                        <div class="display_down">
+                            <ul class="no_decor">
+                                <li>
+                                    <input type="radio" name="MC" value="MC1">+=
+                                </li>
+                                <li>
+                                    <input type="radio" name="MC" value="MC2">++
+                                </li>
+                                <li>
+                                    <input type="radio" name="MC" value="MC3">!&
+                                </li>
+                                <li>  
+                                    <input type="radio" name="MC" value="MC4">!=
+                                </li>      
+                            </ul>
+                        </div>
+                    </li>
+                    <br>
+                    <li>
+                        Επέλεξε τους λάθους ισχυρισμούς :
+                        <div class="display_down">
+                            <ul class="no_decor">
+                                <li>
+                                    <input type="checkbox" name="CHB1" value="CHB1">Η C δεν διαθέτει garbage collection.
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="CHB2" value="CHB2">Η C++ ξεκίνησε σαν προεπεξεργαστής της C.
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="CHB3" value="CHB3">Mπορούν να οριστούν συναρτήσεις μέσα σε άλλες συναρτήσεις.
+                                </li>
+                                <li>
+                                    <input type="checkbox" name="CHB4" value="CHB4">Σε μία εντολή μπορεί να γίνουν παραπάνω από μια εκχωρήσεις τιμών.
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <br>
+                    <li>
+                        Ανέφερε μερικές γλώσσες που έχουν επηρεαστεί άμεσα ή έμμεσα από την C:
+                        <input type="text" name="question5" id="question_5" class="text_field" style="display: inline;">
+                    </li>
+                </ol>
                 <br>
                 <input type="submit" value="Submit" id="submit_btn" onclick="showResults()">
             </form>

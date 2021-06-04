@@ -54,3 +54,19 @@
     transition: all .2s;
 }
 
+ol{
+    text-align: left;
+    margin: 0% 5%;
+    
+}
+
+.display_down{
+    display: block;
+    text-align: left;
+    justify-items: left;
+}
+.no_decor{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
