@@ -70,3 +70,6 @@ ol{
     margin: 0;
     padding: 0;
 }
+[class*='question_']{
+    background-color: yellow;
+}
