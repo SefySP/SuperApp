@@ -58,7 +58,9 @@ function generateQuiz(questions,quizContainer){
             if(questions[i].type=='radio'){
                 answers.push('<div class="display_down"> <ul class="no_decor">');
                 for(letter in questions[i].answers){
-                    answers.push('<li> <input type="radio" name="answers_'+ i +'" '+'value="' + letter + '" > '+question[i].answers[letter]+ '</li>');
+                    answers.push('<li> <input type="radio" name="answers_'+ 
+                    i +'" ' + 'value="' + letter + '" > ' + questions[i].answers[letter] 
+                    + '</li>');
                 }
                 answers.push('</ul> </div>');
             }
@@ -66,17 +68,20 @@ function generateQuiz(questions,quizContainer){
             {
                 answers.push('<div class="display_down"> <ul class="no_decor">');
                 for(letter in questions[i].answers){
-                    answers.push('<li> <input type="checkbox" name="answers_'+ i +'" '+'value="' + letter + '" > '+question[i].answers[letter]+ '</li>');
+                    answers.push('<li> <input type="checkbox" name="answers_' +
+                    i + '" ' + 'value="' + letter + '" > '+ questions[i].answers[letter] + '</li>');
                 }
                 answers.push('</ul> </div>');
             }
             else{
-                answers.push('<input type="text" name="answers_'+ i +'" '+'value="' + letter + '" class="text_field" style="display: inline;" autocomplete="off"> ');
+                answers.push('<input type="text" name="answers_'+ 
+                i +'" '+'value="' + letter 
+                + '" class="text_field" style="display: inline;" autocomplete="off"> ');
             }
             output.push('<li>'+ questions[i].question + answers.join('') +'</li>');
         }
         output.push('</ol>');
-        quizContainer.innerHTML=output.join('');
+        quizContainer.innerHTML = output.join('');
     }
     showQuestions(questions,quizContainer);
 }
