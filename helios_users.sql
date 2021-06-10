@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 07, 2021 at 09:59 PM
+-- Generation Time: Jun 10, 2021 at 08:52 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -33,7 +33,7 @@ CREATE TABLE `helios_users` (
   `Lname` varchar(32) NOT NULL,
   `Email` varchar(256) NOT NULL,
   `Username` varchar(32) NOT NULL,
-  `Password` varchar(32) NOT NULL,
+  `Password` varchar(255) NOT NULL,
   `Gender` varchar(8) NOT NULL,
   `Date` date NOT NULL,
   `Photo` varchar(500) NOT NULL,
@@ -45,8 +45,8 @@ CREATE TABLE `helios_users` (
 --
 
 INSERT INTO `helios_users` (`id`, `Fname`, `Lname`, `Email`, `Username`, `Password`, `Gender`, `Date`, `Photo`, `Role`) VALUES
-(8, 'asd', 'asd', 'asd@asd.asd', 'asd', 'asd', 'female', '2021-05-30', '../Media/asd10.jpg', 'user'),
-(9, 'asd1', 'asd1', 'asd1@asd.asd', 'asd1', 'asd', 'male', '2021-05-18', '../Media/asd110.jpg', 'user');
+(12, 'u1', 'u1', 'u1@u1.com', 'u1', '$2y$10$7bSps1OI2kgAwQxXcktCQuX7q/ULin1H2pfmydQdff0WXEK65nFYC', 'female', '2021-06-24', '../Media/u1lecpain.jpg', 'user'),
+(13, 'u2', 'u2', 'u2@u2.com', 'u2', '$2y$10$i8pB25xLCABsmiRXA50pAO.Xk.cc3AND3WIWq9WD4kAWzJwRneI72', 'male', '2021-06-24', '../Media/u2yak.jpg', 'user');
 
 --
 -- Indexes for dumped tables
@@ -68,7 +68,7 @@ ALTER TABLE `helios_users`
 -- AUTO_INCREMENT for table `helios_users`
 --
 ALTER TABLE `helios_users`
-  MODIFY `id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
