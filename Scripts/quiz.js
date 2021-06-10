@@ -47,17 +47,21 @@ var resultsContainer=document.getElementById('results');
 
 generateQuiz(myQuestions,quizContainer,resultsContainer);
 
-function generateQuiz(questions,quizContainer,resultsContainer){
-    function showQuestions(questions,quizContainer){
+function generateQuiz(questions,quizContainer,resultsContainer)
+{
+    function showQuestions(questions,quizContainer)
+    {
         var output=[];
         var answers;
         output.push('<ol>');
         for(var i=0; i<questions.length; i++)
         {
             answers=[];
-            if(questions[i].type=='radio'){
+            if(questions[i].type=='radio')
+            {
                 answers.push('<div class="display_down"> <ul class="no_decor">');
-                for(letter in questions[i].answers){
+                for(letter in questions[i].answers)
+                {
                     answers.push('<li> <input type="radio" name="answers_'+ 
                     i +'" ' + 'value="' + letter + '" > ' + questions[i].answers[letter] 
                     + '</li>');
@@ -67,13 +71,15 @@ function generateQuiz(questions,quizContainer,resultsContainer){
             else if(questions[i].type=='checkbox')
             {
                 answers.push('<div class="display_down"> <ul class="no_decor">');
-                for(letter in questions[i].answers){
+                for(letter in questions[i].answers)
+                {
                     answers.push('<li> <input type="checkbox" name="answers_' +
                     i + '" ' + 'value="' + letter + '" > '+ questions[i].answers[letter] + '</li>');
                 }
                 answers.push('</ul> </div>');
             }
-            else{
+            else
+            {
                 answers.push('<input type="text" name="answers_'+ 
                 i +'" '+ ' class="text_field" style="display: inline;" autocomplete="off"> ');
             }
@@ -93,11 +99,13 @@ function showResults(){
         if(myQuestions[i].type =='radio')
         {
             userAnswers = (answersContainer[i].querySelector("input[name='answers_"+ i +"']:checked") || {}).value;
-            if(userAnswers === myQuestions[i].correctAnswers){
+            if(userAnswers === myQuestions[i].correctAnswers)
+            {
                 numCorrect++;
                 answersContainer[i].style.color = "lightgreen";
             }
-            else{
+            else
+            {
                 answersContainer[i].style.color = "red";
             }
         }
@@ -110,12 +118,14 @@ function showResults(){
                 var count = 0;
                 for(j=0; j<userAnswers.length; j++)
                 {
-                    if(userAnswers[j].value === myQuestions[i].correctAnswers[j]){
+                    if(userAnswers[j].value === myQuestions[i].correctAnswers[j])
+                    {
                         count++;
                         
                     }
                 }
-                if(count == myQuestions[i].correctAnswers.length){
+                if(count == myQuestions[i].correctAnswers.length)
+                {
                     numCorrect++;
                     answersContainer[i].style.color = "lightgreen";
                 }
@@ -136,21 +146,25 @@ function showResults(){
             var splitUserAnswer = userAnswers.split(" ");
             alert(splitUserAnswer.length);
             alert(splitCorrectAnswer.length);
-            if(myQuestions[i].type == "text_free"){
+            if(myQuestions[i].type == "text_free")
+            {
                 var isCorrect = false;
                 for(var j=0; j<splitUserAnswer.length; j++)
                 {
                     for(var k=0; k<splitCorrectAnswer.length; k++)
                     {
-                        if(splitUserAnswer[j] === splitCorrectAnswer[k]){
+                        if(splitUserAnswer[j] === splitCorrectAnswer[k])
+                        {
                             isCorrect = true;
                             break;
                         }
-                        else{
+                        else
+                        {
                             isCorrect = false;
                         }
                     }
-                    if(!isCorrect){
+                    if(!isCorrect)
+                    {
                         break;
                     }
                 }
@@ -170,12 +184,15 @@ function showResults(){
                 {
                     var j = 0;
                     var count = 0;
-                    for(j=0; j<splitCorrectAnswer.length; j++){
-                        if(splitUserAnswer[j] === splitCorrectAnswer[j]){
+                    for(j=0; j<splitCorrectAnswer.length; j++)
+                    {
+                        if(splitUserAnswer[j] === splitCorrectAnswer[j])
+                        {
                             count++;
                         }
                     }
-                    if(count == splitCorrectAnswer.length){
+                    if(count == splitCorrectAnswer.length)
+                    {
                         numCorrect++;
                         answersContainer[i].style.color = "lightgreen";
                     }

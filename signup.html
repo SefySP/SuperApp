@@ -27,7 +27,7 @@
             </div>
         </nav>
         <main>
-            <form action="Scripts/registry.php" id="form_signup" method="post" enctype="multipart/form-data">
+            <form action="Scripts/registry.php" id="form_signup" method="post" enctype="multipart/form-data" autocomplete="off">
                 <h2>
                     Sign Up
                 </h2>
@@ -37,7 +37,7 @@
                 <input type="text" name="username" id="username_id" placeholder="Username" class="text_field" required>
                 <input type="password" name="password" id="password_id" placeholder="Password" class="text_field" required>
                 <input type="password" name="repeat_password" id="repeat_password_id" placeholder="Repeat Password" class="text_field" required>
-                <select name="user_gender" id="user_gender_id" class="text_field" required>
+                <select name="user_gender" id="user_gender_id" class="text_field" no autocomplete required>
                     <option value="male" selected>
                         Male
                     </option>
