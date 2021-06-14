@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Styles/index.css">
     <link rel="stylesheet" href="Styles/form.css">
-    
+
     <script src="Scripts/navbar_function.js"></script>
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>SuperApp</title>
 </head>
@@ -17,24 +17,25 @@
 <body>
     <div class="container">
         <header>
-            <a href="index.html">
+            <a href="index.php">
                 <img src="Media/transparentlogo.png" alt="logo" class="header_logo">
                 <h1>C</h1>
                 <p>..a programming language</p>
             </a>
         </header>
         <nav>
-        <div class="menu" id="navbar">
-            <a href="index.html">Home</a>
-            <a href="basics.html">Basics</a>
-            <a href="more.html">More</a>
-            <a href="quiz.html">Quiz</a>
-            <a href="signup.html">Signup</a>
-            <a href="login.html">Login</a>
-            <a href="javascript:void(0);" class="icon" onclick="showNavbar()">
-                <i class="fa fa-bars"></i>
-            </a>
-        </div>
+            <div class="menu" id="navbar">
+                <a href="index.php">Home</a>
+                <a href="basics.php">Basics</a>
+                <a href="more.php">More</a>
+                <a href="quiz.php">Quiz</a>
+                <a href="signup.html">Signup</a>
+                <a href="login.html">Login</a>
+                <a href="logout.php">Logout</a>
+                <a href="javascript:void(0);" class="icon" onclick="showNavbar()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
         </nav>
         <main>
             <article class="article">
@@ -52,9 +53,10 @@
             </article>
         </main>
         <footer>
-            <a href="aboutus.html">About Us</a>
+            <a href="aboutus.php">About Us</a>
             &copy;2021 All rights reserved
         </footer>
     </div>
 </body>
+
 </html>

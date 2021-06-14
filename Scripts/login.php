@@ -31,7 +31,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit']))
                 {
                     $_SESSION["id"] = $row["id"];
                     $_SESSION["username"] = $row["Username"];
-                    header("location: ../index.html");
+                    $_SESSION["role"] = $row["Role"];
+                    header("location: ../index.php");
                     exit;
                 }
                 else

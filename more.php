@@ -1,3 +1,7 @@
+<?php
+session_start()
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +20,7 @@
 <body>
     <div class="container">
         <header>
-            <a href="index.html">
+            <a href="index.php">
                 <img src="Media/transparentlogo.png" alt="logo" class="header_logo">
                 <h1>C</h1>
                 <p>..a programming language</p>
@@ -24,12 +28,13 @@
         </header>
         <nav>
             <div class="menu" id="navbar">
-                <a href="index.html">Home</a>
-                <a href="basics.html">Basics</a>
-                <a href="more.html" class="active">More</a>
-                <a href="quiz.html">Quiz</a>
+                <a href="index.php">Home</a>
+                <a href="basics.php">Basics</a>
+                <a href="more.php" class="active">More</a>
+                <a href="quiz.php">Quiz</a>
                 <a href="signup.html">Signup</a>
                 <a href="login.html">Login</a>
+                <a href="logout.php">Logout</a>
                 <a href="javascript:void(0);" class="icon" onclick="showNavbar()">
                     <i class="fa fa-bars"></i>
                 </a>
@@ -48,7 +53,7 @@
         <section>
             <article class="article">
                 <p>&nbsp;&nbsp;&nbsp;&nbsp; Παραθέτουμε έναν τυπικό κώδικα ταξινόμησης(Τρόπος Bubblesort)
-                    <pre class="aside_links_list">
+                <pre class="aside_links_list">
 #include <stdio.h>
 int main()
 {
@@ -97,7 +102,7 @@ int main()
                 <h4>
                     Σελίδες εκμάθησης:
                 </h4>
-                <li>                    
+                <li>
                     <a href="https://www.sololearn.com/learning/1089" target="_blank">Sololearn</a>
                 </li>
                 <li>
@@ -114,7 +119,7 @@ int main()
                 <h3>
                     Παρεμφερής Γλώσσες:
                 </h3>
-                <li>                    
+                <li>
                     <a href="https://www.w3schools.com/java/" target="_blank">Java</a>
                 </li>
                 <li>
@@ -126,7 +131,7 @@ int main()
             </ul>
         </aside>
         <footer>
-            <a href="aboutus.html">About Us</a>
+            <a href="aboutus.php">About Us</a>
             &copy;2021 All rights reserved
         </footer>
     </div>
