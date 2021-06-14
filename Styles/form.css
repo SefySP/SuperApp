@@ -41,6 +41,7 @@
     cursor: pointer;
     text-align: center;
     padding: 3px 10px;
+    margin: 15px;
     font-size: 14px;
     border: 2px solid #E0E0E0;
     border-radius: 8px;
@@ -54,10 +55,13 @@
     transition: all .2s;
 }
 
+#results{
+    margin-bottom: 15px;
+}
+
 ol{
     text-align: left;
     margin: 0% 5%;
-    
 }
 
 .display_down{

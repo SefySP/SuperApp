@@ -9,15 +9,40 @@ body, html{
     box-sizing: border-box;
 }
 
+/*  WEBTWOANDAHALFCOLOURS
+    header-color: #17252A
+    nav-color: #2B7A78
+    background-color: #3AAFA9
+    hover-color: #DEF2F1
+    letter-color: #FEFFFF
+*/
+
 header{
     grid-area: h;
     background-color: lightseagreen;
     color: whitesmoke;
-    padding: 10px;
+    padding: 2px 5px;
+    text-align: left;
+    display: inline;
+}
+header a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+.header_logo{
+    width: 122px;
+    height: 112px;
+    float: left;
+    border: #595959 solid 2px;
+    border-radius: 50%;
+    margin-right: 10px;
 }
 
 main{
     grid-area: m;
+}
+main a{
+    color: black;
 }
 
 nav{
@@ -32,11 +57,19 @@ aside{
     grid-area: a;
 }
 
+aside a{
+    color: black;
+}
+
 footer{
     grid-area: f;
     background-color: #666666;
     color: whitesmoke;
     padding: 5px;
+}
+
+footer a{
+    color: whitesmoke;
 }
 
 .menu{
@@ -81,10 +114,6 @@ footer{
     margin: 5px;
     padding: 5px;
     margin-bottom:20px;
-}
-
-.aside_links_list a{
-    text-decoration: none;
 }
 
 video{
