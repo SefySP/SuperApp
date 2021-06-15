@@ -46,7 +46,6 @@ else
         </header>
         <nav>
             <div class="menu" id="navbar"></div>
-            </div>
         </nav>
         <main>
             <div>

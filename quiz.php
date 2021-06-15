@@ -1,5 +1,19 @@
 <?php
-session_start()
+session_start();
+
+$_userRole = "";
+$_userName = "";
+
+if(isset($_SESSION["id"]))
+{
+    $_userRole = $_SESSION["role"];
+    $_userName = $_SESSION["username"];
+}
+else
+{
+    $_userRole = "1";
+    $_userName = "2";
+}
 ?>
 
 <!DOCTYPE html>
@@ -13,12 +27,13 @@ session_start()
     <link rel="stylesheet" href="Styles/form.css">
 
     <script src="Scripts/navbar_function.js"></script>
+    <script src="Scripts/loadmenu.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>SuperApp</title>
 </head>
 
-<body>
+<body onload="loadMenu('<?php echo $_userRole?>');">
     <div class="container">
         <header>
             <a href="index.php">
@@ -29,16 +44,7 @@ session_start()
         </header>
         <nav>
             <div class="menu" id="navbar">
-                <a href="index.php">Home</a>
-                <a href="basics.php">Basics</a>
-                <a href="more.php">More</a>
-                <a href="quiz.php" class="active">Quiz</a>
-                <a href="signup.html">Signup</a>
-                <a href="login.html">Login</a>
-                <a href="logout.php">Logout</a>
-                <a href="javascript:void(0);" class="icon" onclick="showNavbar()">
-                    <i class="fa fa-bars"></i>
-                </a>
+                
             </div>
         </nav>
         <main>
