@@ -1,7 +1,6 @@
-loadMenu();
-function loadMenu()
+function loadMenu(usrRole)
 {
-    alert("loadmenualert");
+    console.log(usrRole);
     var xmlhttp;
     if (window.XMLHttpRequest)
     {
@@ -22,14 +21,20 @@ function loadMenu()
     //         console.log(xmlhttp.responseText);
     //     }
     // // };
-    // if (usrRole == "user")
-    // {
-    //     xmlhttp.open("GET", "../menu.html", true);
-    // }
-    // else if (usrRole == "")
-    // {
-    //     xmlhttp.open("GET", "../visitormenu.html", true);
-    // }
-    xmlhttp.open("GET", "../visitormenu.html", true);
-    xmlhttp.send();
+    if (usrRole == "user")
+    {
+        console.log("user");
+        xmlhttp.open("GET", "../menu.html", true);
+        xmlhttp.send();
+        return;
+    }
+    else if(usrRole == "");
+    {
+        console.log("visitor");
+        xmlhttp.open("GET", "../visitormenu.html", true);
+        xmlhttp.send();
+        return;
+    }
+    // xmlhttp.open("GET", "../visitormenu.html", true);
+    
 }
