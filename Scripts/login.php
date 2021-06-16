@@ -29,9 +29,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit']))
             {
                 if (password_verify($usr_pass, $row["Password"]))
                 {
+                    $_SESSION["password"] = $usr_pass;
+                    $_SESSION["pswhash"] = $row["Password"];
                     $_SESSION["id"] = $row["id"];
                     $_SESSION["username"] = $row["Username"];
                     $_SESSION["role"] = $row["Role"];
+                    $_SESSION["fname"] = $row["Fname"];
+                    $_SESSION["lname"] = $row["Lname"];
+                    $_SESSION["email"] = $row["Email"];
+                    $_SESSION["gender"] = $row["Gender"];
+                    $_SESSION["date"] = $row["Date"];
+                    $_SESSION["photo"] = $row["Photo"];
                     header("location: ../index.php");
                     exit;
                 }
