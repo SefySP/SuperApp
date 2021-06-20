@@ -1,10 +1,9 @@
 var myQuestions;
-var quizContainer=document.getElementById('quiz_form');
-var resultsContainer=document.getElementById('results');
+var quizContainer = document.getElementById('quiz_form');
+var resultsContainer = document.getElementById('results');
 
 function loadJson()
 {
-    console.log("json");
     var dif = document.getElementById("quiz_dif_id").value;
     var xmlhttp;
     if (window.XMLHttpRequest)
@@ -24,32 +23,35 @@ function loadJson()
     };
     if (dif == "easy")
     {
+        console.log("Easy");
         xmlhttp.open("GET", "../JSON/Easy.json", true);
         xmlhttp.send();
         return;
     }
     else if (dif == "medium")
     {
+        console.log("Medium");
         xmlhttp.open("GET", "../JSON/Medium.json", true);
         xmlhttp.send();
         return;
     }
     else if (dif == "hard")
-    { 
+    {
+        console.log("Hard");
         xmlhttp.open("GET", "../JSON/Hard.json", true);
         xmlhttp.send();
         return;
     }
     else
     {
-        console.log("papap");
+        console.log("Default");
         xmlhttp.open("GET", "../JSON/Default.json", true);
         xmlhttp.send();
         return;
     }
 }
 
-function generateQuiz(questions,quizContainer,resultsContainer)
+function generateQuiz(questions,quizContainer)
 {
     function showQuestions(questions,quizContainer)
     {
@@ -92,6 +94,7 @@ function generateQuiz(questions,quizContainer,resultsContainer)
     }
     showQuestions(questions,quizContainer);
 }
+
 function showResults(){
     var answersContainer = quizContainer.querySelectorAll(".answers");
     var userAnswers = "";

@@ -52,14 +52,10 @@ else
                 Quiz
             </h2>
             <div id="div_select" style="display:none">
-                <select name="quiz_dif" id="quiz_dif_id" no autocomplete>
-                    <option value="default" selected>
-                        Default
-                    </option>
+                <select name="quiz_dif" id="quiz_dif_id">
+                    <option value="default" selected></option>
                 </select>
-                <button type="button" name="dif_select" value="dif_select" id="dif_select_id">Select</button>
             </div>
-            
             <form name="quiz_form">
                 <div id="quiz_form"></div>
                 <br>
@@ -71,7 +67,8 @@ else
             <a href="aboutus.php">About Us</a>
             &copy;2021 All rights reserved
         </footer>
-        <script src="Scripts/quiz.js">loadJson();</script>
     </div>
 </body>
+<script src="Scripts/quiz.js"></script>
+<script>loadJson()</script>
 </html>
