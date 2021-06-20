@@ -67,7 +67,7 @@ else
             <div class="menu" id="navbar"></div>
         </nav>
         <main>
-            <form action="" id="form_signup" method="post" enctype="multipart/form-data" autocomplete="off"> 
+            <form action="Scripts/update_prof_info.php" id="form_signup" method="post" enctype="multipart/form-data" autocomplete="off"> 
                 <img id="prof_photo" src="<?php echo $_photo; ?>"><br>
                 <label>First Name: <input type="text" name="user_fname" id="user_fname_id" class="text_field"  value="<?php echo $_fName;?>"></label>
                 <label>Last Name: <input type="text" name="user_lname" id="user_lname_id" class="text_field"  value="<?php echo $_lName;?>"></label>
@@ -87,8 +87,8 @@ else
                 </select></label>
                 <label>Birth date: <input type="date" name="user_date" id="user_date_id" class="text_field"  value="<?php echo $_date;?>"></label>
                 <label>Change profile picture: <input type="file" name="user_photo" id="user_photo_id" class="text_field" value="<?php echo $_photo; ?>"></label>
+                <input type="hidden" name="user_name" value="<?php echo $_userName; ?>" id="user_name_id">
                 <input type="submit" name="submit" value="Submit Changes" id="submit_btn">
-            
             </form>
         </main>
         <footer>
