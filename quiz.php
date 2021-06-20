@@ -28,6 +28,7 @@ else
 
     <script src="Scripts/navbar_function.js"></script>
     <script src="Scripts/loadmenu.js"></script>
+    
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>SuperApp</title>
@@ -43,27 +44,34 @@ else
             </a>
         </header>
         <nav>
-            <div class="menu" id="navbar">
-                
+            <div class="menu" id="navbar">  
             </div>
         </nav>
         <main>
             <h2>
                 Quiz
             </h2>
+            <div id="div_select" style="display:none">
+                <select name="quiz_dif" id="quiz_dif_id" no autocomplete>
+                    <option value="default" selected>
+                        Default
+                    </option>
+                </select>
+                <button type="button" name="dif_select" value="dif_select" id="dif_select_id">Select</button>
+            </div>
+            
             <form name="quiz_form">
                 <div id="quiz_form"></div>
                 <br>
                 <button type="button" name="Submit" value="Submit" id="submit_btn" onclick="showResults()">Submit</button>
-                <div id="results"></div>
+                <div id="results"></div>   
             </form>
         </main>
         <footer>
             <a href="aboutus.php">About Us</a>
             &copy;2021 All rights reserved
         </footer>
+        <script src="Scripts/quiz.js">loadJson();</script>
     </div>
 </body>
-<script src="Scripts\quiz.js"></script>
-
 </html>
