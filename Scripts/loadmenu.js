@@ -1,3 +1,6 @@
+// Ισως να μην χρειαζεται
+var menu;
+
 function loadMenu(usrRole)
 {
     console.log(usrRole);
@@ -11,16 +14,17 @@ function loadMenu(usrRole)
         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
     xmlhttp.onload = function(){
-        document.getElementById("navbar").innerHTML = xmlhttp.responseText;
-        console.log(xmlhttp.responseText);
+
+        /**
+         * Περναμε το responseText μεσα στο menu 
+         * μετα καλουμε την showActive(ορισμα το menu)
+         * και οτι επιστρεψει το βαζουμε στο navbar που εχουμε 
+         * το console ειναι για check
+         */
+        menu = xmlhttp.responseText;
+        document.getElementById("navbar").innerHTML = showActive(menu);
+        console.log(document.getElementById("navbar").innerHTML);
     };
-    // xmlhttp.onreadystatechange = function(){
-    //     if ((this.readyState == 4) && (this.status == 200))
-    //     {
-    //         document.getElementById("navbar").innerHTML = xmlhttp.responseText;
-    //         console.log(xmlhttp.responseText);
-    //     }
-    // // };
     if (usrRole == "user")
     {
         console.log("user");
@@ -34,7 +38,43 @@ function loadMenu(usrRole)
         xmlhttp.open("GET", "../visitormenu.html", true);
         xmlhttp.send();
         return;
+    }   
+}
+
+
+/**
+ * Περνουμε το URL που ειναι ο χρηστης και το κανουμε split("/") 
+ * περνουμε το τελευταιο στοιχειο που ειναι το file.php
+ * μετα κανουμε split("\")(ειναι ετσι πιο κατω λογο regex) το menu
+ * και αρχικοποιουμε το menu με κενο string
+ * ελεγχουμε 1-1 τα στοιχεια το menuSplit αν ειναι ιδιο με το lastElement
+ * και τοτε περναμε το active
+ * επισης αν ειναι το fa fa-bars απλα το βαζουμε ολο σε ενα string αλλιως ειχε bug 
+ * και μετα περναμε ολο το menuSplit στο menu 
+ * και το επιστρεφουμε
+ * @param {string} menu 
+ * @returns menu
+ */
+function showActive(menu)
+{
+    var splitURL = document.URL.split("/");
+    var lastElement = splitURL[splitURL.length-1];
+    console.log(lastElement);
+
+    var menuSplit = menu.split("\"");
+    menu = "";
+
+    for (let i = 0; i < menuSplit.length; i++) {
+        if(menuSplit[i] == lastElement)
+        {
+            menuSplit[i] += " class='active'";
+        }
+        if(menuSplit[i] == "fa fa-bars")
+        {
+            menuSplit[i] = "'" + menuSplit[i] + "'";
+        }
+        menu += menuSplit[i];
     }
-    // xmlhttp.open("GET", "../visitormenu.html", true);
-    
+
+    return menu;
 }

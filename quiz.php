@@ -67,6 +67,7 @@ else
             <a href="aboutus.php">About Us</a>
             &copy;2021 All rights reserved
         </footer>
+        
     </div>
 </body>
 <script src="Scripts/quiz.js"></script>
