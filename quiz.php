@@ -12,7 +12,7 @@ if(isset($_SESSION["id"]))
 else
 {
     $_userRole = "1";
-    $_userName = "2";
+    $_userName = "T";
 }
 ?>
 
@@ -59,7 +59,7 @@ else
             <form name="quiz_form">
                 <div id="quiz_form"></div>
                 <br>
-                <button type="button" name="Submit" value="Submit" id="submit_btn" onclick="showResults()">Submit</button>
+                <button type="button" name="Submit" value="Submit" id="submit_btn" onclick="showResults('')">Submit</button>
                 <div id="results"></div>   
             </form>
         </main>

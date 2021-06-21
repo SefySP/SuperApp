@@ -154,8 +154,8 @@ function showResults(username){
             userAnswers = answersContainer[i].querySelector("input[name='answers_"+ i +"']").value;
             var splitCorrectAnswer = myQuestions[i].correctAnswers.split(" ");
             var splitUserAnswer = userAnswers.split(" ");
-            alert(splitUserAnswer.length);
-            alert(splitCorrectAnswer.length);
+            console.log(splitUserAnswer.length);
+            console.log(splitCorrectAnswer.length);
             if(myQuestions[i].type == "text_free")
             {
                 var isCorrect = false;
@@ -220,23 +220,34 @@ function showResults(username){
     }
     resultsContainer.innerHTML = numCorrect + " out of " + myQuestions.length;
 
-    var today = new Date();
-    var date = today.getFullYear() + "-" + (today.getMonth()+1) + "-" + today.getDate();
-    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    var datetime = "'" + date +" "+ time + "'";
-
-    var xmlhttp2;
-    if (window.XMLHttpRequest)
+    if(username != "")
     {
-        xmlhttp2 = new XMLHttpRequest();
+        var today = new Date();
+        var date = today.getFullYear() + "-" + (today.getMonth()+1) + "-" + today.getDate();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        var datetime = date +" "+ time;
+    
+        var xmlhttp2;
+        if (window.XMLHttpRequest)
+        {
+            xmlhttp2 = new XMLHttpRequest();
+        }
+        else
+        {
+            xmlhttp2 = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp2.onload = function()
+        {
+            console.log(xmlhttp2.responseText);
+            window.location = "../quiz_user.php";
+            return;
+        };
+        xmlhttp2.open("POST","Scripts/insert_results.php",true);
+        xmlhttp2.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        xmlhttp2.send("username=" + username + "&datetime=" + datetime + "&difficulty=" + difficulty + "&results=" + numCorrect);
     }
     else
     {
-        xmlhttp2 = new ActiveXObject("Microsoft.XMLHTTP");
+        return;
     }
-    console.log(datetime+ " " + username + " " + difficulty + " " + numCorrect);
-    xmlhttp2.open("POST","Scripts/insert_results.php",true);
-    xmlhttp2.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-    xmlhttp2.send("username=" + username + "&datetime =" + datetime + "&difficulty=" + difficulty + "&results=" + numCorrect);
-    console.log("after");
 }
