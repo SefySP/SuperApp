@@ -15,7 +15,6 @@ else
     $_userName = "2";
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,33 +43,11 @@ else
         </header>
         <nav>
             <div class="menu" id="navbar">
-                
             </div>
         </nav>
         <main>
-            <h2>
-                Quiz
-            </h2>
-            <div id="div_select">
-                <select name="quiz_dif" id="quiz_dif_id" no autocomplete>
-                    <option value="easy" selected>
-                        Easy
-                    </option>
-                    <option value="medium">
-                        Medium
-                    </option>
-                    <option value="hard">
-                        Hard
-                    </option>
-                </select>
-                <button type="button" name="dif_select" value="dif_select" id="dif_select_id" onclick="loadJson()">Select</button>
-            </div>
-            <form id="quiz_form_id" name="quiz_form">
-                <div id="quiz_form"></div>
-                <br>
-                <button style="display:none;" type="button" name="Submit" value="Submit" id="submit_btn" onclick="showResults('<?php echo $_userName; ?>')">Submit</button>
-                <div id="results"></div>
-            </form>
+            
+           
         </main>
         <footer>
             <a href="aboutus.php">About Us</a>
@@ -78,6 +55,5 @@ else
         </footer>
     </div>
 </body>
-<script src="Scripts\quiz.js"></script>
 
 </html>

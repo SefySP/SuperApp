@@ -1,6 +1,7 @@
 var myQuestions;
 var quizContainer = document.getElementById('quiz_form');
 var resultsContainer = document.getElementById('results');
+var difficulty;
 
 function loadJson()
 {
@@ -19,10 +20,12 @@ function loadJson()
         myQuestions = JSON.parse(xmlhttp.responseText);
         console.log(myQuestions);
         document.getElementById("div_select").style.display="none";
+        document.getElementById("submit_btn").style.display="inline";
         generateQuiz(myQuestions,quizContainer,resultsContainer);
     };
     if (dif == "easy")
     {
+        difficulty = "easy";
         console.log("Easy");
         xmlhttp.open("GET", "../JSON/Easy.json", true);
         xmlhttp.send();
@@ -30,6 +33,7 @@ function loadJson()
     }
     else if (dif == "medium")
     {
+        difficulty = "medium";
         console.log("Medium");
         xmlhttp.open("GET", "../JSON/Medium.json", true);
         xmlhttp.send();
@@ -37,6 +41,7 @@ function loadJson()
     }
     else if (dif == "hard")
     {
+        difficulty = "hard";
         console.log("Hard");
         xmlhttp.open("GET", "../JSON/Hard.json", true);
         xmlhttp.send();
@@ -95,7 +100,7 @@ function generateQuiz(questions,quizContainer)
     showQuestions(questions,quizContainer);
 }
 
-function showResults(){
+function showResults(username){
     var answersContainer = quizContainer.querySelectorAll(".answers");
     var userAnswers = "";
     var numCorrect = 0;
@@ -214,4 +219,24 @@ function showResults(){
         }
     }
     resultsContainer.innerHTML = numCorrect + " out of " + myQuestions.length;
+
+    var today = new Date();
+    var date = today.getFullYear() + "-" + (today.getMonth()+1) + "-" + today.getDate();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    var datetime = "'" + date +" "+ time + "'";
+
+    var xmlhttp2;
+    if (window.XMLHttpRequest)
+    {
+        xmlhttp2 = new XMLHttpRequest();
+    }
+    else
+    {
+        xmlhttp2 = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    console.log(datetime+ " " + username + " " + difficulty + " " + numCorrect);
+    xmlhttp2.open("POST","Scripts/insert_results.php",true);
+    xmlhttp2.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xmlhttp2.send("username=" + username + "&datetime =" + datetime + "&difficulty=" + difficulty + "&results=" + numCorrect);
+    console.log("after");
 }
