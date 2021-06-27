@@ -46,8 +46,12 @@ else
             </div>
         </nav>
         <main>
-            
-           
+            <h2>
+                History
+            </h2>
+            <div id="history_div">
+                
+            </div>
         </main>
         <footer>
             <a href="aboutus.php">About Us</a>
@@ -55,5 +59,8 @@ else
         </footer>
     </div>
 </body>
-
+<script src="Scripts/loadhistory.js"></script>
+<script>
+    loadHistory('<?php echo $_userName?>');
+</script>
 </html>

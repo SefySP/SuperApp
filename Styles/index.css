@@ -143,6 +143,32 @@ pre{
     float:right;
 }
 
+.history_tb {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 15px;
+    overflow-x: auto;
+}
+
+
+.history_tb th, td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #3AAFA9;
+}
+
+
+
+.history_tb th{
+    background-color: #3AAFA9;
+    color: whitesmoke;
+}
+
+tr:hover{
+    background-color: #c3c3c3;
+}
+
 .container{
     max-width: 100%;
     margin: 0;
@@ -159,6 +185,9 @@ pre{
                 "a a a a a a a a"
                 "f f f f f f f f";
 }
+
+
+
 
 
 /**
@@ -292,5 +321,13 @@ pre{
 
     .img_prof{
         float: none;
+    }
+
+    .history_tb
+    {
+        width: 80%;
+        margin: 0px 10%;
+        margin-bottom: 15px;
+        border: 1px solid #3AAFA9;
     }
 }
