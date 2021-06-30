@@ -1,5 +1,5 @@
 <?php
-$json = $_POST["json"];
+$json = json_decode($_POST["json"], true); // Ηταν το decode ηθελε true 
 $difficulty = $_POST["difficulty"];
 
 

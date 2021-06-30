@@ -74,9 +74,17 @@ function convertToJSON()
             {
                 if(correctAnswersList[i].checked)
                 {
-                    userQuestion.correctAnswers = correctAnswersList[i].value;
+                    if(correctAnswersList[i].value == "True")
+                    {
+                        userQuestion.correctAnswers = "a";
+                    }
+                    else
+                    {
+                        userQuestion.correctAnswers = "b";
+                    }
                 }
             }
+            // alert("Correct Answer: " + userQuestion.correctAnswers);
             userQuestion.type = "radio";
             toJSON = JSON.stringify(userQuestion);
             getJSON(difficulty);
