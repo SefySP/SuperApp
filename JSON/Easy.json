@@ -1,16 +1,6 @@
 [
     {
-        "question": "Q4",
-        "answers": {
-            "a": "True",
-            "b": "False"
-        },
-        "correctAnswers": "a",
-        "type": "radio",
-        "check": "False"
-    },
-    {
-        "question": "Test2",
+        "question": "W2",
         "answers": {
             "a": "True",
             "b": "False"
@@ -20,13 +10,30 @@
         "check": "False"
     },
     {
-        "question": "Test1",
+        "question": "Test",
         "answers": {
             "a": "True",
             "b": "False"
         },
         "correctAnswers": "a",
         "type": "radio",
+        "check": "False"
+    },
+    {
+        "question": "TRes",
+        "answers": {
+            "a": "True",
+            "b": "False"
+        },
+        "correctAnswers": "b",
+        "type": "radio",
+        "check": "False"
+    },
+    {
+        "question": "Test",
+        "answers": [],
+        "correctAnswers": "123 345",
+        "type": "text_free",
         "check": "False"
     },
     {

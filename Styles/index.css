@@ -143,13 +143,25 @@ pre{
     float:right;
 }
 
-.history_tb {
+.history_tb, .questions_tb {
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
     margin-bottom: 15px;
     overflow-x: auto;
 }
+
+.questions_tb th, td{
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #3AAFA9;
+}
+
+.questions_tb th{
+    background-color: #3AAFA9;
+    color: whitesmoke;
+}
+
 
 
 .history_tb th, td {
@@ -164,6 +176,7 @@ pre{
     background-color: #3AAFA9;
     color: whitesmoke;
 }
+
 
 tr:hover{
     background-color: #c3c3c3;

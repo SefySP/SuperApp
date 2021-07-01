@@ -1,11 +1,26 @@
 <?php
-$json = json_decode($_POST["json"], true); // Ηταν το decode ηθελε true 
+
+$json = json_decode($_POST["json"], true);
+
 $difficulty = $_POST["difficulty"];
+$error = '';
+
+if($difficulty == "easy")
+{
+    $file = "../JSON/Easy.json";
+}
+else if($difficulty == "medium")
+{
+    $file = "../JSON/Medium.json";
+}
+else{
+    $file = "../JSON/Hard.json";
+}
 
 
-$test = file_get_contents("../JSON/Easy.json");
+$fileContent = file_get_contents($file);
 
-$data = json_decode($test, true);
+$data = json_decode($fileContent, true);
 
 $dataArr[0] = $json;
 
@@ -15,22 +30,13 @@ for($i = 0; $i < count($data); $i++)
     $dataArr[$i + 1] = $data[$i];
 }
 
+if (file_put_contents($file, json_encode($dataArr))) {
+    $error = 'none';
+}
+else{
+    $error = 'done';
+}
+//file_put_contents($file, json_encode($dataArr));
 
-
-file_put_contents("../JSON/Easy.json", json_encode($dataArr));
-
-
-// if($difficulty == 'easy')
-// {
-//     $file = file_put_contents("../JSON/Easy.json", $json, FILE_APPEND);
-//     if($file === false)
-//     {
-//         echo "False";
-//     }
-//     else
-//     {
-//         echo "Noice";
-//     }
-// }
-return;
+echo $file." ".$error;
 ?>

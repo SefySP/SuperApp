@@ -32,6 +32,20 @@ function loadMenu(usrRole)
         xmlhttp.send();
         return;
     }
+    else if(usrRole == "mod")
+    {
+        console.log("user");
+        xmlhttp.open("GET", "../modmenu.html", true);
+        xmlhttp.send();
+        return;
+    }
+    else if(usrRole == "admin")
+    {
+        console.log("user");
+        xmlhttp.open("GET", "../adminmenu.html", true);
+        xmlhttp.send();
+        return;
+    }
     else if(usrRole == "");
     {
         console.log("visitor");

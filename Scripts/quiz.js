@@ -90,7 +90,7 @@ function generateQuiz(questions,quizContainer)
             else
             {
                 answers.push('<input type="text" name="answers_'+ 
-                i +'" '+ ' class="text_field" style="display: inline;" autocomplete="off"> ');
+                i +'" '+ ' class="text_field" style="display: inline;" autocomplete="off" placeholder="Answers separated with space"> ');
             }
             output.push('<li class="answers">'+ questions[i].question + answers.join('') +'</li>'+'<br>');
         }
