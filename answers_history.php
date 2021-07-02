@@ -1,20 +1,7 @@
 <?php
-session_start();
-
-$_userRole = "";
-$_userName = "";
-
-if(isset($_SESSION["id"]))
-{
-    $_userRole = $_SESSION["role"];
-    $_userName = $_SESSION["username"];
-}
-else
-{
-    $_userRole = "1";
-    $_userName = "2";
-}
+    require_once "Scripts/session.php";
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
