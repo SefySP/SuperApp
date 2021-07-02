@@ -22,7 +22,7 @@ function getJSON(difficulty)
 function createTable(json)
 {
     var table_q = document.getElementById("questions_id");
-    table_q.innerHTML = "<table class='questions_tb' id='question_table_id'><tr><th>Question</th><th>Answers</th><th>Correct Answers</th><th>Type</th><th>Checked</th></tr>";
+    table_q.innerHTML = "<table class='questions_tb' id='question_table_id'><tr><th>Question</th><th>Answers</th><th>Correct Answers</th><th>Type</th><th>Delete</th></tr>";
     console.log(json.length);
     for (let i = 0; i < json.length; i++) 
     {
@@ -32,17 +32,10 @@ function createTable(json)
         {
             answers += " " + letter;
         }
-        if(json[i].check == 'True')
-        {
-            checkbox = "<input type = 'checkbox' name = 'check' id = 'check_"+ i +"_id' checked></input>";
-        }
-        else
-        {
-            checkbox = "<input type = 'checkbox' name = 'check' id = 'check_"+ i +"_id'></input>";
-        }
+        checkbox = "<input type = 'checkbox' name = 'delete' id = 'delete_"+ i +"_id'></input>";
         document.getElementById("question_table_id").innerHTML +="<tr><td>" + json[i].question + "</td><td>" + answers + "</td><td>" + json[i].correctAnswers + "</td><td>" + json[i].type + "</td><td>" + checkbox +"</td></tr>";
     }
-    table_q.innerHTML += "</table> <button name = 'sub_button' id ='submit_btn' onclick = 'sendResults()'>Submit</button>";
+    table_q.innerHTML += "</table> <button name = 'sub_button' id ='submit_btn' onclick = 'sendDeletes()'>Submit</button>";
 }
 
 function loadQuestions() 
@@ -65,12 +58,12 @@ function loadQuestions()
     }
 }
 
-function sendResults()
+function sendDeletes()
 {
     var arr = [];
     var json;
     var difficulty = document.getElementById('quiz_dif_id').value;
-    var checks = document.querySelectorAll('[id*="check_"]');
+    var checks = document.querySelectorAll('[id*="delete_"]');
     alert(checks.length);
     for(var i = 0;i<checks.length;i++)
     {
@@ -91,7 +84,7 @@ function sendResults()
     {
         alert(xmlhttp.responseText);
     };
-    xmlhttp.open("POST", "Scripts/getchecks.php", true);
+    xmlhttp.open("POST", "Scripts/removequestions.php", true);
     xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     xmlhttp.send("json=" + json + "&difficulty="+ difficulty);
 }

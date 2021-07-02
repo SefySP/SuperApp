@@ -65,6 +65,9 @@ function generateQuiz(questions,quizContainer)
         output.push('<ol>');
         for(var i=0; i<questions.length; i++)
         {
+            if(questions[i].check == 'False'){
+                continue;
+            }
             answers=[];
             if(questions[i].type=='radio')
             {

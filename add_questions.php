@@ -2,7 +2,6 @@
     require_once "Scripts/session.php";
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,16 +9,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="cache-control" content="no-cache">
-    <meta http-equiv="pragma" content="no-cache">
-    <meta http-equiv="expires" content="0">
     <link rel="stylesheet" href="Styles/index.css">
     <link rel="stylesheet" href="Styles/form.css">
-
     
     <script src="Scripts/navbar_function.js"></script>
     <script src="Scripts/loadmenu.js"></script>
-    <script src="Scripts/loadquestions.js"></script>
+    <script src="Scripts/loadadd.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -40,9 +35,10 @@
         </nav>
         <main>
             <h2>
-                Questions
+                Add Quiz
             </h2>
-            <div id="div_select">
+            <form name="form_add" id="form_add_id">
+                <div id="div_select">
                     <select name="quiz_dif" id="quiz_dif_id" class='text_field' required no autocomplete >
                         <option value="select" selected>
                             Select
@@ -57,11 +53,33 @@
                             Hard
                         </option>
                     </select>
-                    <button onclick="loadQuestions()">Select</button>
                 </div>
-                <div id="questions_id">
-                    
+                <div>
+                    <select name="quiz_type" id="quiz_type_id" class='text_field' onchange="loadAddQuiz()" required no autocomplete>
+                        <option value="select" selected>
+                            Select
+                        </option>
+                        <option value="T/F">
+                            True/False
+                        </option>
+                        <option value="Option">
+                            Option
+                        </option>
+                        <option value="Multiple_Option">
+                            Multiple Option
+                        </option>
+                        <option value="FreeText">
+                            Free Text
+                        </option>
+                        <option value="Blanks">
+                            Fill The Blanks
+                        </option>
+                    </select>
                 </div>
+                <div id="form_add_q">
+
+                </div>
+            </form>
         </main>
         <footer>
             <a href="aboutus.php">About Us</a>
