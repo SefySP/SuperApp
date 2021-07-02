@@ -64,7 +64,6 @@ function sendDeletes()
     var json;
     var difficulty = document.getElementById('quiz_dif_id').value;
     var checks = document.querySelectorAll('[id*="delete_"]');
-    alert(checks.length);
     for(var i = 0;i<checks.length;i++)
     {
         arr[i] = checks[i].checked;
@@ -82,7 +81,8 @@ function sendDeletes()
     }
     xmlhttp.onload = function()
     {
-        alert(xmlhttp.responseText);
+        console.log(xmlhttp.responseText);
+        window.location.href = "delete_questions.php";
     };
     xmlhttp.open("POST", "Scripts/removequestions.php", true);
     xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");

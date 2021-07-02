@@ -16,22 +16,32 @@ else{
     $file = "../JSON/Hard.json";
 }
 
-for($i = 0 ; $i < count($json); $i++)
-{
+$fileContent = file_get_contents($file);
+
+$data = json_decode($fileContent, true);
+
+$dataArr[] = $data[0];
+
+for ($i=0; $i < count($json); $i++) { 
     $error.=$json[$i];
 }
-$fileContent = file_get_contents($file);
+
+$len = count($data);
+
 $j = 0;
-$data = json_decode($fileContent, true);
-$dataArr = array();
-for($i = 0 ; $i < count($json); $i++)
+
+for($i = 0 ; $i < $len; $i++)
 {
-    if($json[$i] == 'false')
+    if($json[$i] != 1)
     {
         $dataArr[$j] = $data[$i];
         $j++;
     }
+    else
+    {
+        continue;
+    }
 }
 file_put_contents($file,json_encode($dataArr));
-echo count($json);
+echo $error;
 ?>

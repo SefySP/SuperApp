@@ -23,7 +23,7 @@ $data = json_decode($fileContent, true);
 
 for($i = 0 ; $i < count($data); $i++)
 {
-    if($json[$i] == 'true')
+    if($json[$i] == 1)
     {
         $data[$i]['check'] = 'True';
     }
@@ -33,4 +33,6 @@ for($i = 0 ; $i < count($data); $i++)
     }
 }
 file_put_contents($file,json_encode($data));
+
+echo $json[0];
 ?>

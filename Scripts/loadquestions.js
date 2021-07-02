@@ -71,7 +71,6 @@ function sendResults()
     var json;
     var difficulty = document.getElementById('quiz_dif_id').value;
     var checks = document.querySelectorAll('[id*="check_"]');
-    alert(checks.length);
     for(var i = 0;i<checks.length;i++)
     {
         arr[i] = checks[i].checked;
@@ -89,7 +88,8 @@ function sendResults()
     }
     xmlhttp.onload = function()
     {
-        alert(xmlhttp.responseText);
+        console.log(xmlhttp.responseText);
+        window.location.href = "question_approval.php";
     };
     xmlhttp.open("POST", "Scripts/getchecks.php", true);
     xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
