@@ -43,6 +43,7 @@ function loadQuestions()
     var difficulty = document.getElementById("quiz_dif_id").value;
     if(difficulty == "select")
     {
+        document.getElementById("questions_id").innerHTML = "";
     }
     else if(difficulty == "easy")
     {

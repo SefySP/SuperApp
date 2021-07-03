@@ -87,6 +87,10 @@ function showActive(menu)
         {
             menuSplit[i] = "'" + menuSplit[i] + "'";
         }
+        if(menuSplit[i] == "fa fa-caret-down")
+        {
+            menuSplit[i] = "'" + menuSplit[i] + "'";
+        }
         menu += menuSplit[i];
     }
 

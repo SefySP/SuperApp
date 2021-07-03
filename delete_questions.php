@@ -40,10 +40,10 @@
         </nav>
         <main>
             <h2>
-                Questions
+                Delete
             </h2>
             <div id="div_select">
-                    <select name="quiz_dif" id="quiz_dif_id" class='text_field' required no autocomplete >
+                    <select name="quiz_dif" id="quiz_dif_id" class='text_field' onchange="loadQuestions()" required no autocomplete >
                         <option value="select" selected>
                             Select
                         </option>
@@ -57,7 +57,6 @@
                             Hard
                         </option>
                     </select>
-                    <button onclick="loadQuestions()">Select</button>
                 </div>
                 <div id="questions_id">
                     

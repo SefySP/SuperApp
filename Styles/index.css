@@ -72,6 +72,14 @@ footer a{
     color: whitesmoke;
 }
 
+/*
+    Ειναι για να κανει float το menu
+*/
+[id*="menu_"]
+{
+    float: none;
+}
+
 .menu{
     background-color: #595959;
     margin: 0;
@@ -89,15 +97,65 @@ footer a{
     color: whitesmoke;
     text-decoration: none;
     font-size: 1.1em;
-}
-
-.menu a:hover{
-    background-color: #A6A6A6;
+    min-width: 100px;
 }
 
 .menu a.active{
     background-color: lightseagreen;
     color: whitesmoke;
+}
+
+/*
+    Οτι εχει το drop ειναι για το dropdown menu.
+    Δειτε link: https://www.w3schools.com/howto/howto_js_responsive_navbar_dropdown.asp.
+    Εχουν αλλαξει και τα αντιστοιχα αρχεια(visitormenu, menu, modmenu, adminmenu, login & sign-up).
+    Υπαρχει και μια αλλαγη στο loadmenu.js ειναι για το fa.
+*/
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {  
+    font-size: 1.1em;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 10px 12px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    min-width: 130px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #A6A6A6;
+    min-width: 130px;
+    overflow: hidden;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    padding: 10px 12px;
+    text-decoration: none;
+    display: block;
+    /* text-align: left; */
+}
+
+.menu a:hover, .dropdown:hover .dropbtn{
+    background-color: #A6A6A6;
+}
+.dropdown-content a:hover {
+    background-color: #595959;
+}
+
+.dropdown:hover .dropdown-content{
+    display: block;
 }
 
 .article{
@@ -199,10 +257,6 @@ tr:hover{
                 "f f f f f f f f";
 }
 
-
-
-
-
 /**
     Αυτα τα δυο media γινονται γιατι θα πρεπει να πειραξουμε τα αρχικα media
     ισως στο μελλον να το κανουμε μεσω τον αλλων 
@@ -210,7 +264,7 @@ tr:hover{
 
 @media screen and (max-width: 800px){
     /*Το :not() ειναι τι css και παιρνει ολα τα elements που δεν ειναι πρωτο-παιδι*/
-    .menu a:not(:first-child){
+    .menu a:not(:first-child), .dropdown .dropbtn{
         display: none;
     }
 
@@ -237,6 +291,20 @@ tr:hover{
         display: block;
         /* text-align: left; */
     }
+
+    .menu.responsive .dropdown {
+        float: none;
+    }
+
+    .menu.responsive .dropdown-content {
+        position: relative;
+    }
+
+    .menu.responsive .dropdown .dropbtn{
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
 }
 
 @media screen and (min-width: 800px){
@@ -257,10 +325,7 @@ tr:hover{
                     "f f f f f f f f";
     }
 
-    .menu
-    {
-        padding: 10px;
-    }
+    
 
     .menu .icon{
         display: none;
@@ -268,11 +333,6 @@ tr:hover{
 
     .img_book{
         width:35%;
-    }
-
-    .menu a{
-        float: none;
-        display: inline;
     }
 
     .article{
@@ -287,6 +347,12 @@ tr:hover{
 
     img{
         width: 100%;
+    }
+
+    [id*="menu_"]
+    {
+        float: right !important;
+        /* margin-right: 10px; */
     }
 }
 
@@ -311,10 +377,6 @@ tr:hover{
     .img_book{
         width:15%;
         padding: 10px 25px;
-    }
-
-    .menu a{
-        display: inline;
     }
 
     .article{
@@ -342,5 +404,10 @@ tr:hover{
         margin: 0px 10%;
         margin-bottom: 15px;
         border: 1px solid #3AAFA9;
+    }
+
+    [id*="menu_"] 
+    {
+        float: right !important;
     }
 }
