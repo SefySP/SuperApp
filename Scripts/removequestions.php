@@ -30,7 +30,7 @@ $len = count($data);
 
 $j = 0;
 
-for($i = 0 ; $i < $len; $i++)
+for($i = 0 ; $i < $len ; $i++)
 {
     if($json[$i] != 1)
     {
