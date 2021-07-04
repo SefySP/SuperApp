@@ -23,17 +23,11 @@ if(isset($_SESSION["id"]))
     $_date = $_SESSION["date"];
     $_password = $_SESSION["password"];
     $_pswHash = $_SESSION["pswhash"];
-    $_photo = "Media/". $_temp[2];
+    $_photo = $_temp[1]."/". $_temp[2];
 }
 else
 {
     $_userRole = "1";
     $_userName = "2";
 }
-
-// if (isset($_SESSION["id"]) && $_SESSION["id"] === true)
-// {
-//     header("location: index.php");
-//     exit;
-// }
 ?>

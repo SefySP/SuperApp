@@ -11,26 +11,62 @@ $usr_gender = trim($_POST["user_gender"]);
 $usr_date = trim($_POST["user_date"]);
 $usr_photo = $_FILES["user_photo"]['name'];
 
-$target = "../Media/$usr_name".basename($usr_photo);
+$target = "../UserPhoto/$usr_name.".pathinfo($usr_photo, PATHINFO_EXTENSION);
+$data = getimagesize($_FILES["user_photo"]['tmp_name']);
+$width = $data[0];
+$height = $data[1];
 
 $db = mysqli_connect("localhost", "root", "", "helios_users");
 
-$sql = "INSERT INTO helios_users (Fname, Lname, Email, Username, Password, Gender, Date, Photo, Role) VALUES ('$usr_fname', '$usr_lname','$usr_email', '$usr_name', '$pw_hash', '$usr_gender', '$usr_date', '$target', 'user')";
+$sql = "SELECT * FROM helios_users WHERE Username = '$usr_name' OR Email = '$usr_email'";
+$result = mysqli_query($db, $sql);
 
-if (move_uploaded_file($_FILES['user_photo']['tmp_name'],$target)) 
+$error = '';
+
+if($result-> num_rows > 0)
 {
-    echo "true";
+    $row = $result->fetch_assoc();
+    if($row["Username"] == $usr_name)
+    {
+        $error .= 'Username already used!';
+    }
+    else if($row["Email"] == $usr_email)
+    {
+        $error .= 'Email already used!';
+    }
+}
+else if($usr_pass != $usr_re_pass)
+{
+    $error .= 'Invalid password!';
+}
+else if($width > 512)
+{
+    $error .= 'Width > 512!';
+}
+
+if($error == '')
+{
+    $sql = "INSERT INTO helios_users (Fname, Lname, Email, Username, Password, Gender, Date, Photo, Role) VALUES ('$usr_fname', '$usr_lname','$usr_email', '$usr_name', '$pw_hash', '$usr_gender', '$usr_date', '$target', 'user')";
+
+    $result = mysqli_query($db, $sql);
+
+    if (move_uploaded_file($_FILES['user_photo']['tmp_name'],$target)) 
+    {
+        echo "true";
+    }
+    else
+    {
+        echo "false";
+    }
+
+    mysqli_close($db);
+    header("location:../login.html");
 }
 else
 {
-    echo "false";
+    mysqli_close($db);
+    echo "<script>alert('$error');location.href = '../signup.html';</script>";
 }
 
-
-mysqli_query($db, $sql);
-
-mysqli_close($db);
-
-header("location:../login.html");
 
 ?>

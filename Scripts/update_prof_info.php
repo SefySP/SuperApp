@@ -12,27 +12,59 @@ $usr_gender = trim($_POST["user_gender"]);
 $usr_date = trim($_POST["user_date"]);
 $usr_photo = $_FILES["user_photo"]['name'];
 
-if($usr_photo == "")
+$sql = "SELECT * FROM helios_users WHERE Email = '$usr_email'";
+$result = mysqli_query($db, $sql);
+
+$error = '';
+
+if($result->num_rows > 1)
 {
-    $sql = "UPDATE helios_users SET Fname = '$usr_fname', Lname = '$usr_lname' , Email = '$usr_email',Password = '$pw_hash', Gender = '$usr_gender', Date = '$usr_date' WHERE Username = '$usr_name';";
+    $error .= 'Email already used!';
 }
-else
+else if($usr_pass != $usr_re_pass)
 {
-    $target = "../Media/$usr_name".basename($usr_photo);
-    $sql = "UPDATE helios_users SET Fname = '$usr_fname', Lname = '$usr_lname' , Email = '$usr_email',Password = '$pw_hash', Gender = '$usr_gender', Date = '$usr_date', Photo = '$target' WHERE Username = '$usr_name';";
-    if (move_uploaded_file($_FILES['user_photo']['tmp_name'],$target)) 
+    $error .= 'Invalid password!';
+}
+if ($error == '') 
+{
+    if($usr_photo == "")
     {
-        echo "true";
+        $sql = "UPDATE helios_users SET Fname = '$usr_fname', Lname = '$usr_lname' , Email = '$usr_email',Password = '$pw_hash', Gender = '$usr_gender', Date = '$usr_date' WHERE Username = '$usr_name';";
     }
     else
     {
-        echo "false";
+        $target = "../UserPhoto/$usr_name.".pathinfo($usr_photo, PATHINFO_EXTENSION);
+        $data = getimagesize($_FILES["user_photo"]['tmp_name']);
+        $width = $data[0];
+        $height = $data[1];
+        if($width > 512)
+        {
+            $error .= 'Width > 512!';
+            echo "<script>alert('$error');location.href = '../profile.php';</script>";
+        }
+        else
+        {
+            $sql = "UPDATE helios_users SET Fname = '$usr_fname', Lname = '$usr_lname' , Email = '$usr_email',Password = '$pw_hash', Gender = '$usr_gender', Date = '$usr_date', Photo = '$target' WHERE Username = '$usr_name';";
+            if (move_uploaded_file($_FILES['user_photo']['tmp_name'],$target)) 
+            {
+                echo "true";
+            }
+            else
+            {
+                echo "false";
+            }
+        }
     }
+    mysqli_query($db, $sql);
+    mysqli_close($db);
+    header("location:../logout.php");
+}
+else
+{
+    echo "<script>alert('$error');location.href = '../logout.php';</script>";
 }
 
-mysqli_query($db, $sql);
 
-mysqli_close($db);
 
-header("location:../logout.php");
+
 ?>
