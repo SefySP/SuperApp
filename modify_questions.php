@@ -19,7 +19,7 @@
     
     <script src="Scripts/navbar_function.js"></script>
     <script src="Scripts/loadmenu.js"></script>
-    <script src="Scripts/loadquestions.js"></script>
+    <script src="Scripts/modifyquestions.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
