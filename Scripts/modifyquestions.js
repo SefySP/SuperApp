@@ -21,7 +21,7 @@ function getJSON(difficulty)
 function createTable(json)
 {
     var table_q = document.getElementById("questions_id");
-    table_q.innerHTML = "<table class='questions_tb' id='question_table_id'><tr><th>Question</th><th>Answers</th><th>Correct Answers</th><th>Type</tr>";
+    table_q.innerHTML = "<table class='questions_tb' id='question_table_id'><tr><th>Question</th><th>Answers</th><th>Correct Answers</th><th>Type</th></tr>";
     console.log(json.length);
     for (let i = 0; i < json.length; i++) 
     {
