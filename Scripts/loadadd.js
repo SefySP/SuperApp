@@ -193,6 +193,7 @@ function sendJSON(difficulty)
 {
     var xmlhttp;
     var json = toJSON;
+    console.log(json);
     if (window.XMLHttpRequest)
     {
         xmlhttp = new XMLHttpRequest();

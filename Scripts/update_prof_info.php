@@ -29,7 +29,13 @@ if ($error == '')
 {
     if($usr_photo == "")
     {
-        $sql = "UPDATE helios_users SET Fname = '$usr_fname', Lname = '$usr_lname' , Email = '$usr_email',Password = '$pw_hash', Gender = '$usr_gender', Date = '$usr_date' WHERE Username = '$usr_name';";
+        if (empty($usr_pass)) {
+            $sql = "UPDATE helios_users SET Fname = '$usr_fname', Lname = '$usr_lname' , Email = '$usr_email', Gender = '$usr_gender', Date = '$usr_date' WHERE Username = '$usr_name';";
+        }
+        else
+        {
+            $sql = "UPDATE helios_users SET Fname = '$usr_fname', Lname = '$usr_lname' , Email = '$usr_email',Password = '$pw_hash', Gender = '$usr_gender', Date = '$usr_date' WHERE Username = '$usr_name';";
+        }
     }
     else
     {
@@ -44,7 +50,13 @@ if ($error == '')
         }
         else
         {
-            $sql = "UPDATE helios_users SET Fname = '$usr_fname', Lname = '$usr_lname' , Email = '$usr_email',Password = '$pw_hash', Gender = '$usr_gender', Date = '$usr_date', Photo = '$target' WHERE Username = '$usr_name';";
+            if (empty($usr_pass)) {
+                $sql = "UPDATE helios_users SET Fname = '$usr_fname', Lname = '$usr_lname' , Email = '$usr_email', Gender = '$usr_gender', Date = '$usr_date', Photo = '$target' WHERE Username = '$usr_name';";
+            }
+            else
+            {
+                $sql = "UPDATE helios_users SET Fname = '$usr_fname', Lname = '$usr_lname' , Email = '$usr_email',Password = '$pw_hash', Gender = '$usr_gender', Date = '$usr_date', Photo = '$target' WHERE Username = '$usr_name';";
+            }
             if (move_uploaded_file($_FILES['user_photo']['tmp_name'],$target)) 
             {
                 echo "true";
@@ -63,8 +75,5 @@ else
 {
     echo "<script>alert('$error');location.href = '../logout.php';</script>";
 }
-
-
-
 
 ?>

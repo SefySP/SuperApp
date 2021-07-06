@@ -1,5 +1,5 @@
 <?php
-    require_once "Scripts/session.php";
+require_once "Scripts/session.php";
 ?>
 
 <!DOCTYPE html>
@@ -9,6 +9,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="0">
     <link rel="stylesheet" href="Styles/index.css">
     <link rel="stylesheet" href="Styles/form.css">
 
@@ -19,7 +22,7 @@
     <title>SuperApp</title>
 </head>
 
-<body onload="loadMenu('<?php echo $_userRole?>');">
+<body onload="loadMenu('<?php echo $_userRole ?>');">
     <div class="container">
         <header>
             <a href="index.php">
@@ -30,7 +33,7 @@
         </header>
         <nav>
             <div class="menu" id="navbar">
-                
+
             </div>
         </nav>
         <main>

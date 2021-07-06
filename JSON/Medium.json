@@ -1,6 +1,6 @@
 [
     {
-        "question": "M \u0397 \u03b3\u03bb\u03ce\u03c3\u03c3\u03b1 \u03bf\u03bd\u03bf\u03bc\u03ac\u03c3\u03c4\u03b7\u03ba\u03b5 'C' \u03bb\u03cc\u03b3\u03c9 \u03c4\u03bf\u03c5 \u03cc\u03c4\u03b9 \u03c0\u03bf\u03bb\u03bb\u03ac \u03b1\u03c0\u03cc \u03c4\u03b1 \u03c7\u03b1\u03c1\u03b1\u03ba\u03c4\u03b7\u03c1\u03b9\u03c3\u03c4\u03b9\u03ba\u03ac \u03c4\u03b7\u03c2 \u03c0\u03c1\u03bf\u03ae\u03bb\u03b8\u03b1\u03bd \u03b1\u03c0\u03cc \u03bc\u03b9\u03b1 \u03c0\u03b1\u03bb\u03b1\u03b9\u03cc\u03c4\u03b5\u03c1\u03b7 \u03b3\u03bb\u03ce\u03c3\u03c3\u03b1 \u03b7 \u03bf\u03c0\u03bf\u03af\u03b1 \u03bf\u03bd\u03bf\u03bc\u03b1\u03b6\u03cc\u03c4\u03b1\u03bd 'B'. :",
+        "question": "Οι παράμετροι περνιούνται στις συναρτήσεις πάντα με τιμή(pass-by-value).",
         "answers": {
             "a": "True",
             "b": "False"
@@ -10,37 +10,67 @@
         "check": "True"
     },
     {
-        "question": "M \u0395\u03c0\u03ad\u03bb\u03b5\u03be\u03b5 \u03c4\u03bf\u03bd \u03bb\u03ac\u03b8\u03bf\u03c2 \u03b4\u03b9\u03b1\u03c4\u03c5\u03c0\u03c9\u03bc\u03ad\u03bd\u03bf \u03c4\u03b5\u03bb\u03b5\u03c3\u03c4\u03ae :",
+        "question": "Σε μία εντολή μπορεί να γίνουν παραπάνω από μια εκχωρήσεις τιμών.",
         "answers": {
-            "a": "plus",
-            "b": "plus plus",
-            "c": "not",
-            "d": "equals"
+            "a": "True",
+            "b": "False"
         },
-        "correctAnswers": "c",
+        "correctAnswers": "a",
+        "type": "radio",
+        "check": "False"
+    },
+    {
+        "question": "Η C αποκαλείτε :",
+        "answers": {
+            "a": "Φορητή συμβολική γλώσσα.",
+            "b": "Συμβολική γλώσσα υψηλού επιπέδου.",
+            "c": "C",
+            "d": "Όλα τα παραπάνω."
+        },
+        "correctAnswers": "d",
         "type": "radio",
         "check": "True"
     },
     {
-        "question": "\u0395\u03c0\u03ad\u03bb\u03b5\u03be\u03b5 \u03c4\u03bf\u03c5\u03c2 \u03bb\u03ac\u03b8\u03bf\u03c5\u03c2 \u03b9\u03c3\u03c7\u03c5\u03c1\u03b9\u03c3\u03bc\u03bf\u03cd\u03c2 :",
+        "question": "Επέλεξε τους τύπους λογικών σχέσεων:",
         "answers": {
-            "a": "\u0397 C \u03b4\u03b5\u03bd \u03b4\u03b9\u03b1\u03b8\u03ad\u03c4\u03b5\u03b9 garbage collection.",
-            "b": "\u0397 Cpp \u03be\u03b5\u03ba\u03af\u03bd\u03b7\u03c3\u03b5 \u03c3\u03b1\u03bd \u03c0\u03c1\u03bf\u03b5\u03c0\u03b5\u03be\u03b5\u03c1\u03b3\u03b1\u03c3\u03c4\u03ae\u03c2 \u03c4\u03b7\u03c2 C.",
-            "c": "M\u03c0\u03bf\u03c1\u03bf\u03cd\u03bd \u03bd\u03b1 \u03bf\u03c1\u03b9\u03c3\u03c4\u03bf\u03cd\u03bd \u03c3\u03c5\u03bd\u03b1\u03c1\u03c4\u03ae\u03c3\u03b5\u03b9\u03c2 \u03bc\u03ad\u03c3\u03b1 \u03c3\u03b5 \u03ac\u03bb\u03bb\u03b5\u03c2 \u03c3\u03c5\u03bd\u03b1\u03c1\u03c4\u03ae\u03c3\u03b5\u03b9\u03c2.",
-            "d": "\u03a3\u03b5 \u03bc\u03af\u03b1 \u03b5\u03bd\u03c4\u03bf\u03bb\u03ae \u03bc\u03c0\u03bf\u03c1\u03b5\u03af \u03bd\u03b1 \u03b3\u03af\u03bd\u03bf\u03c5\u03bd \u03c0\u03b1\u03c1\u03b1\u03c0\u03ac\u03bd\u03c9 \u03b1\u03c0\u03cc \u03bc\u03b9\u03b1 \u03b5\u03ba\u03c7\u03c9\u03c1\u03ae\u03c3\u03b5\u03b9\u03c2 \u03c4\u03b9\u03bc\u03ce\u03bd."
+            "a": "||",
+            "b": "&&",
+            "c": "!!",
+            "d": ">"
         },
         "correctAnswers": [
             "a",
-            "b",
-            "c"
+            "b"
         ],
         "type": "checkbox",
+        "check": "False"
+    },
+    {
+        "question": "Είναι δυνατή η άμεση προσπέλαση _____ επιπέδου στη μνήμη του υπολογιστή με τη χρήση ____.",
+        "answers": [],
+        "correctAnswers": "χαμηλού δεικτών",
+        "type": "text_strict",
         "check": "True"
     },
     {
-        "question": "M \u0391\u03bd\u03ad\u03c6\u03b5\u03c1\u03b5 \u03bc\u03b5\u03c1\u03b9\u03ba\u03ad\u03c2 \u03b3\u03bb\u03ce\u03c3\u03c3\u03b5\u03c2 \u03c0\u03bf\u03c5 \u03ad\u03c7\u03bf\u03c5\u03bd \u03b5\u03c0\u03b7\u03c1\u03b5\u03b1\u03c3\u03c4\u03b5\u03af \u03ac\u03bc\u03b5\u03c3\u03b1 \u03ae \u03ad\u03bc\u03bc\u03b5\u03c3\u03b1 \u03b1\u03c0\u03cc \u03c4\u03b7\u03bd C:",
+        "question": "Οι ____ σε συναρτήσεις και δεδομένα επιτρέπουν την υλοποίηση ____ στην πράξη",
         "answers": [],
-        "correctAnswers": "Java Cpp Python",
+        "correctAnswers": "δείκτες πολυμορφισμού",
+        "type": "text_strict",
+        "check": "True"
+    },
+    {
+        "question": "Ανέφερε μερικές γλώσσες που έχουν επηρεαστεί άμεσα ή έμμεσα από την C:",
+        "answers": {},
+        "correctAnswers": "Java Python Cpp",
+        "type": "text_free",
+        "check": "True"
+    },
+    {
+        "question": "Δεν υπάρχει ιδιαίτερος τύπος για ____ τα οποία παραδοσιακά υλοποιούνται και αντιμετωπίζονται σαν πίνακες από χαρακτήρες και έχουν έναν μηδενικό χαρακτήρα να σημαδεύει το τέλος τους (null-terminated arrays of characters).",
+        "answers": {},
+        "correctAnswers": "string αλφαριθμητικά",
         "type": "text_free",
         "check": "True"
     }

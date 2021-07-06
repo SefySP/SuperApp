@@ -18,10 +18,11 @@ function loadJson()
     xmlhttp.onload = function()
     {
         myQuestions = JSON.parse(xmlhttp.responseText);
+        myQuestions = JSON.parse(checkedQuestions(myQuestions));
         console.log(myQuestions);
         document.getElementById("div_select").style.display="none";
         document.getElementById("submit_btn").style.display="inline";
-        generateQuiz(myQuestions,quizContainer,resultsContainer);
+        generateQuiz(myQuestions, quizContainer, resultsContainer);
     };
     if (dif == "easy")
     {
@@ -54,6 +55,47 @@ function loadJson()
         xmlhttp.send();
         return;
     }
+}
+
+function checkedQuestions(myQuestions)
+{
+    var questions = [];
+    var j = 0;
+    for (let i = 0; i < myQuestions.length; i++) 
+    {
+        if (myQuestions[i].check == 'False') 
+        {
+            continue;
+        }
+        questions[j] = myQuestions[i];
+        j++;
+    }
+    console.log("thisql " + questions.length + " thisj " + j);
+    var fivequestions = [];
+    var set = new Set();
+    set.add(Math.floor(Math.random() * (questions.length)));
+    j = 1;
+    while(true)
+    {
+        var random = Math.floor(Math.random()*(questions.length));
+        if (set.has(random))
+        {
+            continue;
+        }
+        set.add(random);
+        j++;
+        if (j == 5)
+        {
+            break;
+        }
+    }
+    arrayset = Array.from(set);
+    for (let i = 0; i < arrayset.length; i++) 
+    {
+        fivequestions[i] = questions[arrayset[i]];
+    }
+    console.log(fivequestions);
+    return JSON.stringify(fivequestions);
 }
 
 function generateQuiz(questions,quizContainer)
@@ -107,6 +149,7 @@ function showResults(username){
     var answersContainer = quizContainer.querySelectorAll(".answers");
     var userAnswers = "";
     var numCorrect = 0;
+    console.log("this " + myQuestions.length);
     for(var i=0; i<myQuestions.length; i++)
     {
         if(myQuestions[i].type =='radio')

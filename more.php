@@ -1,5 +1,5 @@
 <?php
-    require_once "Scripts/session.php";
+require_once "Scripts/session.php";
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +18,7 @@
     <title>SuperApp</title>
 </head>
 
-<body onload="loadMenu('<?php echo $_userRole?>');">
+<body onload="loadMenu('<?php echo $_userRole ?>');">
     <div class="container">
         <header>
             <a href="index.php">
@@ -29,7 +29,7 @@
         </header>
         <nav>
             <div class="menu" id="navbar">
-                
+
             </div>
         </nav>
         <main>
@@ -54,7 +54,9 @@ int main()
     scanf("%d", &n);
     printf("Enter %d integers\n", n);
     for (c = 0; c < n; c++) 
+    {
         scanf("%d", &array[c]); 
+    }
     for (c=0 ; c < n - 1; c++) 
     { 
         for (d=0 ; d < n - c - 1; d++) 
@@ -67,7 +69,11 @@ int main()
             } 
         } 
     }
-    printf("Sorted list in ascending order:\n"); for (c=0; c < n; c++) printf("%d\n",array[c]); 
+    printf("Sorted list in ascending order:\n"); 
+    for (c=0; c < n; c++)
+    {
+        printf("%d\n",array[c]); 
+    }
     return 0; 
 }
                     </pre>

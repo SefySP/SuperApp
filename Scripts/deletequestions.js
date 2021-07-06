@@ -59,7 +59,7 @@ function loadQuestions()
     }
 }
 
-function sendModify()
+function sendDeletes()
 {
     var arr = [];
     var json;

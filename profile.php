@@ -41,8 +41,8 @@
                 <label>First Name: <input type="text" name="user_fname" id="user_fname_id" class="text_field"  value="<?php echo $_fName;?>"></label>
                 <label>Last Name: <input type="text" name="user_lname" id="user_lname_id" class="text_field"  value="<?php echo $_lName;?>"></label>
                 <label>Email: <input type="text" name="user_email" id="user_email_id" class="text_field"  value="<?php echo $_email;?>"></label>
-                <label>Password: <input type="password" name="password" id="password_id" placeholder="Password" class="text_field" value="<?php echo $_password;?>"> </label>
-                <label>Repeat password: <input type="password" name="repeat_password" id="repeat_password_id" placeholder="Repeat Password" class="text_field" value="<?php echo $_password;?>"></label>
+                <label>Password: <input type="password" name="password" id="password_id" placeholder="Password" class="text_field" value=""> </label>
+                <label>Repeat password: <input type="password" name="repeat_password" id="repeat_password_id" placeholder="Repeat Password" class="text_field" value=""></label>
                 <label>Gender: <select name="user_gender" id="user_gender_id" class="text_field" no autocomplete>
                     <option value="male">
                         Male
