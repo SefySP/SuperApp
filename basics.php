@@ -35,7 +35,7 @@
         <main>
             <div>
                 <h2>
-                    Basics <?php echo $_userName; ?>
+                    Basics
                 </h2>
                 <img src="Media\imggrey.jpg" alt="imggrey"></img>
                 <article class="article">
