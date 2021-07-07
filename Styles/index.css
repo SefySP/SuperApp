@@ -211,8 +211,9 @@ pre{
 
 .questions_tb th, td{
     text-align: left;
-    padding: 8px;
     border-bottom: 1px solid #3AAFA9;
+    font-size: 0.7em;
+    width: 100%;
 }
 
 .questions_tb th{
@@ -220,12 +221,26 @@ pre{
     color: whitesmoke;
 }
 
+.questions_tb td [id*='q_']
+{
+    width: 50%;
+}
 
+.questions_tb td [id*='reg_']
+{
+    width: 90px;
+}
+
+.questions_tb td [id*='answer_']
+{
+    width: 70%;
+}
 
 .history_tb th, td {
     text-align: left;
-    padding: 8px;
     border-bottom: 1px solid #3AAFA9;
+    font-size: 0.7em;
+    width: 100%;
 }
 
 
@@ -398,12 +413,32 @@ tr:hover{
         float: none;
     }
 
-    .history_tb
+    .history_tb, .questions_tb
     {
-        width: 80%;
-        margin: 0px 10%;
+        width: 90%;
+        margin: 0px 5%;
         margin-bottom: 15px;
         border: 1px solid #3AAFA9;
+    }
+
+    .history_tb th, td {
+        text-align: left;
+        padding: 8px;
+        border-bottom: 1px solid #3AAFA9;
+        font-size: 1em;
+        width: 50%;
+    }
+    .history_tb th ,.questions_tb th
+    {
+        padding: 8px;
+    }
+
+    .questions_tb th, td{
+        text-align: left;
+        padding: 8px;
+        border-bottom: 1px solid #3AAFA9;
+        font-size: 1em;
+        width: 50%;
     }
 
     [id*="menu_"] 

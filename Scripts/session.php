@@ -28,6 +28,6 @@ if(isset($_SESSION["id"]))
 else
 {
     $_userRole = "1";
-    $_userName = "2";
+    $_userName = "World";
 }
 ?>

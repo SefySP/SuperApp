@@ -18,7 +18,10 @@ function loadJson()
     xmlhttp.onload = function()
     {
         myQuestions = JSON.parse(xmlhttp.responseText);
-        myQuestions = JSON.parse(checkedQuestions(myQuestions));
+        if(!(dif == "Default"))
+        {
+            myQuestions = JSON.parse(checkedQuestions(myQuestions));
+        }
         console.log(myQuestions);
         document.getElementById("div_select").style.display="none";
         document.getElementById("submit_btn").style.display="inline";
@@ -50,6 +53,7 @@ function loadJson()
     }
     else
     {
+        dif = "Default";
         console.log("Default");
         xmlhttp.open("GET", "../JSON/Default.json", true);
         xmlhttp.send();

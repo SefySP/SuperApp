@@ -1,5 +1,9 @@
 <?php
 require_once "Scripts/session.php";
+if($_userName == "World")
+{
+    header("Location: login.html");
+}
 ?>
 
 <!DOCTYPE html>

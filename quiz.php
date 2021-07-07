@@ -61,7 +61,7 @@ require_once "Scripts/session.php";
 </body>
 <script src="Scripts/quiz.js"></script>
 <script>
-    loadJson()
+    loadJson("visitor");
 </script>
 
 </html>

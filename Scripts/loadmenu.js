@@ -46,7 +46,7 @@ function loadMenu(usrRole)
         xmlhttp.send();
         return;
     }
-    else if(usrRole == "");
+    else
     {
         console.log("visitor");
         xmlhttp.open("GET", "../visitormenu.html", true);

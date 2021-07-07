@@ -1,5 +1,9 @@
 <?php
     require_once "Scripts/session.php";
+    if($_userName == "World")
+    {
+        header("Location: login.html");
+    }
 ?>
 
 
@@ -58,7 +62,7 @@
                         </option>
                     </select>
                 </div>
-                <div id="questions_id">
+                <div style="overflow-x: auto;" id="questions_id">
                     
                 </div>
         </main>

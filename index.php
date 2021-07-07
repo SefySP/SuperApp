@@ -34,8 +34,7 @@
         <main>
             <div>
                 <h2>
-                    > Hello, World!_"
-                    <?php echo $_userName; ?>
+                    > Hello, <?php echo $_userName; ?>!_"
                 </h2>
                 <article class="article">
                     <p>
