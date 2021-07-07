@@ -15,6 +15,15 @@
         }
     }
 
+    for($i = 0 ; $i < count($users) ; $i++)
+    {
+        if($deletes[$i] == 'true')
+        {
+            $sql = "DELETE FROM user_answers WHERE  Username = '$users[$i]'";
+            $result = mysqli_query($db, $sql);
+        }
+    }
+
 
     for ($i = 0 ; $i < count($users) ; $i++)
     {

@@ -22,10 +22,10 @@ function loadJson()
         {
             myQuestions = JSON.parse(checkedQuestions(myQuestions));
         }
-        console.log(myQuestions);
+        // console.log(myQuestions);
         document.getElementById("div_select").style.display="none";
         document.getElementById("submit_btn").style.display="inline";
-        generateQuiz(myQuestions, quizContainer, resultsContainer);
+        generateQuiz(myQuestions, quizContainer);
     };
     if (dif == "easy")
     {
@@ -74,7 +74,7 @@ function checkedQuestions(myQuestions)
         questions[j] = myQuestions[i];
         j++;
     }
-    console.log("thisql " + questions.length + " thisj " + j);
+    // console.log("thisql " + questions.length + " thisj " + j);
     var fivequestions = [];
     var set = new Set();
     set.add(Math.floor(Math.random() * (questions.length)));
@@ -98,7 +98,7 @@ function checkedQuestions(myQuestions)
     {
         fivequestions[i] = questions[arrayset[i]];
     }
-    console.log(fivequestions);
+    // console.log(fivequestions);
     return JSON.stringify(fivequestions);
 }
 
@@ -150,6 +150,7 @@ function generateQuiz(questions,quizContainer)
 }
 
 function showResults(username){
+
     var answersContainer = quizContainer.querySelectorAll(".answers");
     var userAnswers = "";
     var numCorrect = 0;
@@ -270,7 +271,7 @@ function showResults(username){
     }
     resultsContainer.innerHTML = numCorrect + " out of " + myQuestions.length;
 
-    if(username != "")
+    if(!(username == 'visitor'))
     {
         var today = new Date();
         var date = today.getFullYear() + "-" + (today.getMonth()+1) + "-" + today.getDate();
@@ -289,6 +290,7 @@ function showResults(username){
         xmlhttp2.onload = function()
         {
             console.log(xmlhttp2.responseText);
+            alert(numCorrect + " out of " + myQuestions.length);
             window.location = "../quiz_user.php";
             return;
         };
@@ -298,6 +300,9 @@ function showResults(username){
     }
     else
     {
+
+        alert(numCorrect + " out of " + myQuestions.length);
+        window.location = "../quiz.php";
         return;
     }
 }

@@ -23,32 +23,32 @@ function loadMenu(usrRole)
          */
         menu = xmlhttp.responseText;
         document.getElementById("navbar").innerHTML = showActive(menu);
-        console.log(document.getElementById("navbar").innerHTML);
+        // console.log(document.getElementById("navbar").innerHTML);
     };
     if (usrRole == "user")
     {
-        console.log("user");
+        // console.log("user");
         xmlhttp.open("GET", "../menu.html", true);
         xmlhttp.send();
         return;
     }
     else if(usrRole == "mod")
     {
-        console.log("user");
+        // console.log("user");
         xmlhttp.open("GET", "../modmenu.html", true);
         xmlhttp.send();
         return;
     }
     else if(usrRole == "admin")
     {
-        console.log("user");
+        // console.log("user");
         xmlhttp.open("GET", "../adminmenu.html", true);
         xmlhttp.send();
         return;
     }
     else
     {
-        console.log("visitor");
+        // console.log("visitor");
         xmlhttp.open("GET", "../visitormenu.html", true);
         xmlhttp.send();
         return;
@@ -73,7 +73,7 @@ function showActive(menu)
 {
     var splitURL = document.URL.split("/");
     var lastElement = splitURL[splitURL.length-1];
-    console.log(lastElement);
+    // console.log(lastElement);
 
     var menuSplit = menu.split("\"");
     menu = "";

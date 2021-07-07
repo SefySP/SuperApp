@@ -48,7 +48,7 @@ require_once "Scripts/session.php";
             <form name="quiz_form">
                 <div id="quiz_form"></div>
                 <br>
-                <button type="button" name="Submit" value="Submit" id="submit_btn" onclick="showResults('')">Submit</button>
+                <button type="button" name="Submit" value="Submit" id="submit_btn" onclick="showResults('visitor')">Submit</button>
                 <div id="results"></div>
             </form>
         </main>

@@ -11,8 +11,7 @@ function getJSON(difficulty)
     }
     xmlhttp.onload = function()
     {
-        var json = JSON.parse(xmlhttp.responseText);
-    
+        var json = JSON.parse(xmlhttp.responseText);    
         createTable(json);
     };
     xmlhttp.open("GET", "JSON/" + difficulty + ".json", true);

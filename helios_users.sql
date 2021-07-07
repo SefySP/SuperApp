@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 04, 2021 at 03:17 AM
+-- Generation Time: Jul 07, 2021 at 06:10 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -45,10 +45,33 @@ CREATE TABLE `helios_users` (
 --
 
 INSERT INTO `helios_users` (`id`, `Fname`, `Lname`, `Email`, `Username`, `Password`, `Gender`, `Date`, `Photo`, `Role`) VALUES
-(0, '11', '11', 'f11@gmail.com', '11', '$2y$10$LIN0TWx66rn/3ncFmhuRDuvkG44xLNBDwmLvskPMfVZAqt3vdHrk2', 'female', '2021-06-15', '../UserPhoto/11.png', 'user'),
-(1, 'mod', 'mod', 'mod1@gmail.com', 'mod', '$2y$10$ZLmUUG1mu8vRDACoETtAfe4PcaQ0X9jvfnyRdNur9IhScrVZ/9jbe', 'other', '2000-08-04', '../UserPhoto/mod.jpg', 'mod'),
-(2, 'admin', 'admin', 'admin@gmail.com', 'admin', '$2y$10$FQw0xzvm.RAL6hL43bWfl.S0TaSW2ucu1gWyEONItnq87yErKHH0m', 'male', '1999-11-09', '../UserPhoto/admin.jpg', 'admin'),
-(50, 'User', 'User', 'User@gmail.com', 'User', '$2y$10$mY5NT/hDnXXyiHTkXjIbAOuTP9GS6KhuaIgr.BfpY6wMuKaFAsLKO', 'other', '2000-09-12', '../UserPhoto/User.jpeg', 'user');
+(1, 'admin', 'admin', 'admin@email.com', 'admin', '$2y$10$cRXryp5NzhusEUvANlJimuD7jsXVpuwfS56Aq.krlmBsXZDf68OKm', 'other', '1999-11-09', '../UserPhoto/admin.png', 'admin'),
+(2, 'mod', 'mod', 'mod@email.com', 'mod', '$2y$10$GK8oM/2zQgtU6oduho9/XOSV0s5OruV/2YVEi.Nh19b2lr48vkEJS', 'other', '2000-08-04', '../UserPhoto/mod.png', 'mod'),
+(3, 'user', 'user', 'user@email.com', 'user', '$2y$10$ful/RngLGQi3waMLYJRDOesMBBA/JipRoD9BJgTwOqbYpiy1qQzIK', 'other', '2000-09-12', '../UserPhoto/user.png', 'user');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_answers`
+--
+
+CREATE TABLE `user_answers` (
+  `Username` varchar(80) NOT NULL,
+  `Datetime` datetime NOT NULL,
+  `Difficulty` varchar(8) NOT NULL,
+  `Result` tinyint(4) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user_answers`
+--
+
+INSERT INTO `user_answers` (`Username`, `Datetime`, `Difficulty`, `Result`) VALUES
+('user', '2021-07-07 19:02:29', 'easy', 5),
+('user', '2021-07-07 19:03:24', 'medium', 3),
+('user', '2021-07-07 19:04:33', 'hard', 3),
+('admin', '2021-07-07 19:05:44', 'hard', 5),
+('mod', '2021-07-07 19:06:54', 'medium', 5);
 
 --
 -- Indexes for dumped tables
@@ -70,7 +93,7 @@ ALTER TABLE `helios_users`
 -- AUTO_INCREMENT for table `helios_users`
 --
 ALTER TABLE `helios_users`
-  MODIFY `id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

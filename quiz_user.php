@@ -58,7 +58,7 @@
                 </select>
                 <button type="button" name="dif_select" value="dif_select" id="dif_select_id" onclick="loadJson()">Select</button>
             </div>
-            <form id="quiz_form_id" name="quiz_form" action="../htdocs/answers_history.php">
+            <form id="quiz_form_id" name="quiz_form">
                 <div id="quiz_form"></div>
                 <br>
                 <button style="display:none;" type="button" name="Submit" value="Submit" id="submit_btn" onclick="showResults('<?php echo $_userName; ?>')">Submit</button>
